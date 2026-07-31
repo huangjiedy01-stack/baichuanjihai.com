@@ -43,8 +43,7 @@
     <div class="footer-bottom">
       <div class="footer-bottom-inner container">
         <span>© {{ currentYear }} 成都百川集海智能家居有限公司</span>
-        <span class="separator">|</span>
-        <span>蜀ICP备xxxxxxxx号</span>
+
       </div>
     </div>
   </footer>

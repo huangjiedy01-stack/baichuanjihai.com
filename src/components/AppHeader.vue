@@ -3,10 +3,7 @@
     <div class="header-inner container">
       <router-link to="/" class="logo">
         <span class="logo-icon">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 4L6 20H12V42H19V30H29V42H36V20H42L24 4Z" fill="#B8936B"/>
-            <circle cx="24" cy="16" r="3.5" fill="#FFFFFF"/>
-          </svg>
+          <img src="/logo.png" alt="百川集海" />
         </span>
         <div class="logo-text">
           <span class="logo-name">百川集海</span>
