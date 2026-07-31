@@ -98,7 +98,6 @@
           <span>🗺️</span>
           <h3>公司地址</h3>
           <p>中国-四川-成都-崇州</p>
-          <p class="map-hint">（可嵌入百度地图或高德地图）</p>
         </div>
       </div>
     </section>
