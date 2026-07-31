@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# 禁止抓取不需要的目录
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json$
+
+# Sitemap 地址
+Sitemap: https://baichuanjihai.com/sitemap.xml
+
+# 指定百度的爬虫
+User-agent: Baiduspider
+Allow: /
+Sitemap: https://baichuanjihai.com/sitemap.xml
