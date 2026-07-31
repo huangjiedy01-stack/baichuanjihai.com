@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build:seo"
+  command = "echo Build skipped - dist already pre-rendered"
   publish = "dist"
 
 # SPA 路由回退（对不存在的路径回退到 index.html）
