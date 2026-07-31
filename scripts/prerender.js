@@ -132,6 +132,24 @@ function generateSitemap(domain) {
 }
 
 /**
+ * 在 Windows 上查找已安装的 Chrome 路径
+ */
+function findChromeOnWindows() {
+  const possiblePaths = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    resolve(process.env.LOCALAPPDATA || '', 'Google\\Chrome\\Application\\chrome.exe'),
+    resolve(process.env.PROGRAMFILES || '', 'Google\\Chrome\\Application\\chrome.exe'),
+    resolve(process.env['PROGRAMFILES(X86)'] || '', 'Google\\Chrome\\Application\\chrome.exe'),
+  ]
+  for (const p of possiblePaths) {
+    if (p && existsSync(p)) return p
+  }
+  return null
+}
+
+/**
  * 主流程
  */
 async function main() {
@@ -157,9 +175,16 @@ async function main() {
   const server = await startServer()
   const baseUrl = `http://localhost:${PORT}`
 
+  // 查找系统已安装的 Chrome，没找到就用 puppeteer 默认方式
+  const chromePath = findChromeOnWindows()
+  if (chromePath) {
+    console.log(`  使用系统 Chrome: ${chromePath}`)
+  }
+
   // 启动浏览器
   const browser = await puppeteer.launch({
     headless: true,
+    executablePath: chromePath || undefined,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   })
 
