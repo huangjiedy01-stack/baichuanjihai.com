@@ -70,11 +70,11 @@
                 <label>咨询类型</label>
                 <select v-model="form.type">
                   <option value="">请选择咨询类型</option>
-                  <option value="wardrobe">定制衣柜</option>
-                  <option value="kitchen">定制橱柜</option>
-                  <option value="whole-house">全屋定制</option>
-                  <option value="furniture">成品家具</option>
-                  <option value="other">其他咨询</option>
+                  <option value="定制衣柜">定制衣柜</option>
+                  <option value="定制橱柜">定制橱柜</option>
+                  <option value="全屋定制">全屋定制</option>
+                  <option value="成品家具">成品家具</option>
+                  <option value="其他咨询">其他咨询</option>
                 </select>
               </div>
               <div class="form-group">
