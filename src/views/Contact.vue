@@ -124,10 +124,10 @@ async function handleSubmit() {
   try {
     const body = new URLSearchParams()
     body.append('form-name', 'contact')
-    body.append('name', form.name)
-    body.append('phone', form.phone)
-    body.append('type', form.type)
-    body.append('message', form.message)
+    body.append('姓名', form.name)
+    body.append('电话', form.phone)
+    body.append('咨询类型', form.type)
+    body.append('留言内容', form.message)
 
     await fetch('/', {
       method: 'POST',
