@@ -14,6 +14,19 @@
   </head>
   <body>
     <div id="app"></div>
+    <!-- Netlify Forms 隐藏表单（部署时自动检测） -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <select name="type">
+        <option value="wardrobe">定制衣柜</option>
+        <option value="kitchen">定制橱柜</option>
+        <option value="whole-house">全屋定制</option>
+        <option value="furniture">成品家具</option>
+        <option value="other">其他咨询</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
     <script type="module" src="/src/main.js"></script>
     <!-- 百度自动推送 -->
     <script>

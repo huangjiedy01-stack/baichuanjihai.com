@@ -121,10 +121,20 @@ const form = reactive({
 async function handleSubmit() {
   submitting.value = true
 
-  // 模拟提交（实际使用时接入 Formspree 或后端 API）
-  // 免费方案推荐：formspree.io，修改 action URL 即可
   try {
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const body = new URLSearchParams()
+    body.append('form-name', 'contact')
+    body.append('name', form.name)
+    body.append('phone', form.phone)
+    body.append('type', form.type)
+    body.append('message', form.message)
+
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
+    })
+
     submitted.value = true
     Object.assign(form, { name: '', phone: '', type: '', message: '' })
   } catch {
