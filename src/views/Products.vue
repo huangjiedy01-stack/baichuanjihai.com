@@ -89,7 +89,7 @@ const spaces = [
   },
   {
     id: 'dining',
-    image: 'dining-room.png',
+    image: 'dining-room.jpg',
     name: '餐厅空间',
     desc: '打造优雅有格调的用餐与社交空间',
     products: ['餐边柜', '酒柜', '吧台', '酒窖定制', '餐具柜'],

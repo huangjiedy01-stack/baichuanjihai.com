@@ -58,7 +58,7 @@ const spaces = [
   },
   {
     name: '餐厅空间',
-    image: 'dining-room.png',
+    image: 'dining-room.jpg',
     desc: '餐厅承载着家庭的烟火气息。餐边柜、酒柜、嵌入式餐桌等定制方案，让每一餐都充满仪式感。',
   },
   {

@@ -117,7 +117,7 @@ const features = [
 const spaces = [
   { name: '客厅空间', image: 'living-room.jpg', link: '/spaces' },
   { name: '卧房空间', image: 'bedroom.jpg', link: '/spaces' },
-  { name: '餐厅空间', image: 'dining-room.png', link: '/spaces' },
+  { name: '餐厅空间', image: 'dining-room.jpg', link: '/spaces' },
   { name: '书房空间', image: 'study-room.jpg', link: '/spaces' },
   { name: '厨房空间', image: 'kitchen.jpg', link: '/spaces' },
 ]
