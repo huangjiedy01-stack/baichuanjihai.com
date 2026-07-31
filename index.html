@@ -15,7 +15,8 @@
   <body>
     <div id="app"></div>
     <!-- Netlify Forms 隐藏表单（部署时自动检测） -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" style="display:none" />
       <input type="text" name="name" />
       <input type="tel" name="phone" />
       <select name="type">
