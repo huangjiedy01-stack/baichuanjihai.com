@@ -14,7 +14,8 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const DIST_DIR = resolve(__dirname, 'dist')
+const PROJECT_ROOT = resolve(__dirname, '..')
+const DIST_DIR = resolve(PROJECT_ROOT, 'dist')
 const PORT = 3456
 
 // 所有需要预渲染的路由
@@ -139,7 +140,7 @@ async function main() {
   let domain = process.argv[2]
   if (!domain) {
     try {
-      const config = JSON.parse(readFileSync(resolve(__dirname, 'seo.config.json'), 'utf-8'))
+      const config = JSON.parse(readFileSync(resolve(PROJECT_ROOT, 'seo.config.json'), 'utf-8'))
       domain = config.domain
     } catch {
       domain = 'https://baichuanjihai.com'
