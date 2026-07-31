@@ -91,7 +91,14 @@ async function prerenderRoute(browser, baseUrl, route) {
     // 额外等待以确保异步内容加载完毕
     await new Promise((r) => setTimeout(r, 2000))
 
-    const html = await page.content()
+    let html = await page.content()
+
+    // 修复预渲染中浏览器把相对资源解析成 localhost 绝对地址的问题
+    html = html.replace(new RegExp(`http://localhost:${PORT}/`, 'g'), '/')
+
+    // 去除可能重复注入的百度推送脚本
+    html = html.replace(/<script\s+src="\/\/zz\.bdstatic\.com\/linksubmit\/push\.js"><\/script>/g, '')
+    html = html.replace(/<script\s+src="https:\/\/zz\.bdstatic\.com\/linksubmit\/push\.js"><\/script>/g, '')
 
     // 在 HTML 中添加静态 meta 标签（从路由配置对应）
     const outputPath = resolve(DIST_DIR, route.file)

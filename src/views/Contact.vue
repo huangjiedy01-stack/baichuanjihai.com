@@ -58,17 +58,17 @@
             <form class="contact-form" @submit.prevent="handleSubmit">
               <div class="form-row">
                 <div class="form-group">
-                  <label>您的姓名 <span class="required">*</span></label>
-                  <input v-model="form.name" type="text" placeholder="请输入您的姓名" required />
+                  <label for="contact-name">您的姓名 <span class="required">*</span></label>
+                  <input id="contact-name" v-model="form.name" name="姓名" type="text" placeholder="请输入您的姓名" required />
                 </div>
                 <div class="form-group">
-                  <label>联系电话 <span class="required">*</span></label>
-                  <input v-model="form.phone" type="tel" placeholder="请输入您的联系电话" required />
+                  <label for="contact-phone">联系电话 <span class="required">*</span></label>
+                  <input id="contact-phone" v-model="form.phone" name="电话" type="tel" placeholder="请输入您的联系电话" required />
                 </div>
               </div>
               <div class="form-group">
-                <label>咨询类型</label>
-                <select v-model="form.type">
+                <label for="contact-type">咨询类型</label>
+                <select id="contact-type" v-model="form.type" name="咨询类型">
                   <option value="">请选择咨询类型</option>
                   <option value="定制衣柜">定制衣柜</option>
                   <option value="定制橱柜">定制橱柜</option>
@@ -78,8 +78,8 @@
                 </select>
               </div>
               <div class="form-group">
-                <label>留言内容 <span class="required">*</span></label>
-                <textarea v-model="form.message" rows="5" placeholder="请描述您的需求，我们将尽快与您联系..." required></textarea>
+                <label for="contact-message">留言内容 <span class="required">*</span></label>
+                <textarea id="contact-message" v-model="form.message" name="留言内容" rows="5" placeholder="请描述您的需求，我们将尽快与您联系..." required></textarea>
               </div>
               <button type="submit" class="submit-btn" :disabled="submitting">
                 {{ submitting ? '提交中...' : '提交留言' }}

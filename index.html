@@ -16,29 +16,24 @@
     <div id="app"></div>
     <!-- Netlify Forms 隐藏表单（部署时自动检测） -->
     <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input name="bot-field" style="display:none" />
-      <input type="text" name="姓名" />
-      <input type="tel" name="电话" />
-      <select name="咨询类型">
+      <input name="bot-field" aria-label="反垃圾字段" style="display:none" />
+      <input type="text" name="姓名" aria-label="姓名" />
+      <input type="tel" name="电话" aria-label="电话" />
+      <select name="咨询类型" aria-label="咨询类型">
         <option value="定制衣柜">定制衣柜</option>
         <option value="定制橱柜">定制橱柜</option>
         <option value="全屋定制">全屋定制</option>
         <option value="成品家具">成品家具</option>
         <option value="其他咨询">其他咨询</option>
       </select>
-      <textarea name="留言内容"></textarea>
+      <textarea name="留言内容" aria-label="留言内容"></textarea>
     </form>
     <script type="module" src="/src/main.js"></script>
     <!-- 百度自动推送 -->
     <script>
     (function(){
       var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-      } else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-      }
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
     })();
