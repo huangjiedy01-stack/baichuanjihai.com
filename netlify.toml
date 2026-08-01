@@ -2,6 +2,12 @@
   command = "echo Build skipped - dist already pre-rendered"
   publish = "dist"
 
+# 裸域名跳转到 www
+[[redirects]]
+  from = "https://baichuanjihai.com/*"
+  to = "https://www.baichuanjihai.com/:splat"
+  status = 301
+
 # SPA 路由回退（对不存在的路径回退到 index.html）
 [[redirects]]
   from = "/*"
